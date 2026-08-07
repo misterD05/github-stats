@@ -101,3 +101,9 @@ app.get('/api/hexagonalStats/:username/:color', async (c) => {
 
 export default app;
 
+if (process.env.NODE_ENV !== 'production') {
+  serve({
+    fetch: app.fetch,
+    port: 3000
+  });
+}
