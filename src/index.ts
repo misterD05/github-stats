@@ -1,27 +1,10 @@
-import { serve } from '@hono/node-server'
-import { Hono, Context } from 'hono'
-import { join } from 'node:path'
-import { serveStatic } from '@hono/node-server/serve-static';
+import { serve } from '@hono/node-server';
+import { Hono, Context } from 'hono';
 import { UserGithub, DonutLanguagesGithub, GeneralStatsGithub, HexagonStatsGithub} from "./github_requests.js";
-import type { Http2ServerRequest } from 'node:http2';
-import { readFile } from 'fs/promises';
 
 
 
 const app = new Hono()
-
-app.use('/*', serveStatic({ root: './public' }));
-
-app.get('/', async (c) => {
-  try {
-    const filePath = join(process.cwd(), 'public', 'index.html')
-    const html = await readFile(filePath, 'utf-8')
-
-    return c.html(html)
-  } catch (error) {
-    return c.text('HTML not found', 404)
-  }
-})
 
 const sendSvg = (c: Context, svgContent: string, status: ContentStatus = 200) => {
     c.header('Cache-Control', 'no-cache, no-store, must-revalidate');

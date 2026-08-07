@@ -3,5 +3,9 @@
     "api/**/*.ts": {
       "includeFiles": "public/**"
     }
-  }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.ts" },
+    { "source": "/(.*)", "destination": "/public/$1" }
+  ]
 }
