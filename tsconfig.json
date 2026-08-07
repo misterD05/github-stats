@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "types": [
       "node"
@@ -16,5 +17,6 @@
     "rootDir": "./src",
     "outDir": "./dist"
   },
+  "include": ["src/**/*", "api/**/*"],
   "exclude": ["node_modules"]
 }
