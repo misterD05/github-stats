@@ -1,10 +1,11 @@
 import { serve } from '@hono/node-server'
 import { Hono, Context } from 'hono'
-import { readFile } from 'node:fs/promises'
+import * as fs from 'fs/promises';
 import { join } from 'node:path'
 import { serveStatic } from '@hono/node-server/serve-static';
 import { UserGithub, DonutLanguagesGithub, GeneralStatsGithub, HexagonStatsGithub} from "./github_requests.js";
 import type { Http2ServerRequest } from 'node:http2';
+import { readFile } from 'node:fs/promises';
 
 
 
