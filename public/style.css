@@ -26,13 +26,13 @@ header {
 }
 
 .logo {
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 800;
     letter-spacing: 1.5px;
     color: #f0f6fc;
     text-transform: uppercase;
     background: linear-gradient(45deg, #58a6ff, #bc8cff);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -65,7 +65,7 @@ main {
 
 .hero-title span {
     background: linear-gradient(45deg, #58a6ff, #1f6feb);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
