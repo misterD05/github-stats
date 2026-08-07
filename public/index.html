@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Stats - Uncover Your Insights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">GitHub Stats</div>
+    </header>
+
+    <main>
+        <section class="hero" id="heroSection">
+            <h1 class="hero-title">Uncover Your<br><span>GitHub Insights.</span></h1>
+            <p class="hero-subtitle">
+                Inserisci il tuo username qui sotto per generare istantaneamente le tue metriche personalizzate di GitHub in tempo reale.
+            </p>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="usernameInput" class="search-input" placeholder="Cerca username GitHub...">
+            <button class="search-btn" onclick="generateDashboard()">Analyze</button>
+        </div>
+
+        <div class="dashboard" id="dashboardGrid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">User Profile info</div>
+                    <button class="copy-btn" id="btnCopyAccount" onclick="copyLink('imgAccount', this)">Copy Link</button>
+                </div>
+                <img id="imgAccount" src="" alt="Account Info Loading...">
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Language Distribution</div>
+                    <button class="copy-btn" id="btnCopyLanguages" onclick="copyLink('imgLanguages', this)">Copy Link</button>
+                </div>
+                <img id="imgLanguages" src="" alt="Languages Loading...">
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">General Stats</div>
+                    <button class="copy-btn" id="btnCopyStats" onclick="copyLink('imgStats', this)">Copy Link</button>
+                </div>
+                <img id="imgStats" src="" alt="General Stats Loading...">
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Dev Stats Game</div>
+                    <button class="copy-btn" id="btnCopyHex" onclick="copyLink('hexStats', this)">Copy Link</button>
+                </div>
+                <img id="hexStats" src="" alt="General Stats Loading...">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a class="search-btn" href="https://github.com/misterD05">Creator misterD05</a>
+        </div>
+        <div>2026 GitHub Stats Project</div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
