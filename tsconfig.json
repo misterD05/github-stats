@@ -14,9 +14,9 @@
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "rootDir": "api",
+    "rootDir": "src",
     "outDir": "./dist"
   },
-  "include": ["api/**/*", "api/**/*"],
+  "include": ["src/**/*", "src/**/*"],
   "exclude": ["node_modules"]
 }
