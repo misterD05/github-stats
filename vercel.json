@@ -1,15 +1,4 @@
 {
-  "functions": {
-    "api/**/*.ts": {
-      "includeFiles": "public/**"
-    }
-  },
-  "builds": [
-    {
-      "src": "src/index.ts",
-      "use": "@vercel/node"
-    }
-  ],
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.ts" },
     { "source": "/(.*)", "destination": "/public/$1" }
