@@ -1,9 +1,20 @@
 import { serve } from '@hono/node-server';
 import { Hono, Context } from 'hono';
 import { UserGithub, DonutLanguagesGithub, GeneralStatsGithub, HexagonStatsGithub} from "./github_requests.js";
-
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
 const app = new Hono()
+
+app.get('/', async (c) => {
+  try {
+    const filePath = resolve('./public/index.html');
+    const htmlContent = await readFile(filePath, 'utf-8');
+    return c.html(htmlContent);
+  } catch (err) {
+    return c.text('Errore caricamento HTML: ' + err, 500);
+  }
+});
 
 const sendSvg = (c: Context, svgContent: string, status: ContentStatus = 200) => {
   c.header('Cache-Control', 'no-cache, no-store, must-revalidate');
